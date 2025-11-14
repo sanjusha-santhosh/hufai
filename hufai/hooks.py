@@ -83,7 +83,10 @@ app_license = "mit"
 # ------------
 
 # before_install = "hufai.install.before_install"
-# after_install = "hufai.install.after_install"
+after_install = "hufai.install.after_install"
+after_migrate = "hufai.install.after_migrate"
+after_app_install = "hufai.ai.tool_registry.sync_app_tools"
+
 
 # Uninstallation
 # ------------
@@ -137,16 +140,37 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "*": {
+        "validate": "hufai.ai.agent_hooks.run_hooked_agents",
+        "before_insert": "hufai.ai.agent_hooks.run_hooked_agents",
+        "after_insert": "hufai.ai.agent_hooks.run_hooked_agents",
+        "before_save": "hufai.ai.agent_hooks.run_hooked_agents",
+        "after_save": "hufai.ai.agent_hooks.run_hooked_agents",
+        "before_submit": "hufai.ai.agent_hooks.run_hooked_agents",
+        "after_submit": "hufai.ai.agent_hooks.run_hooked_agents",
+        "before_cancel": "hufai.ai.agent_hooks.run_hooked_agents",
+        "on_submit": "hufai.ai.agent_hooks.run_hooked_agents",
+        "on_update": "hufai.ai.agent_hooks.run_hooked_agents",
+        "before_rename": "hufai.ai.agent_hooks.run_hooked_agents",
+        "after_rename": "hufai.ai.agent_hooks.run_hooked_agents",
+        "on_trash": "hufai.ai.agent_hooks.run_hooked_agents",
+        "after_delete": "hufai.ai.agent_hooks.run_hooked_agents",
+    },
+    "Agent Trigger": {
+        "after_insert": "hufai.ai.agent_hooks.clear_doc_event_agents_cache",
+        "on_update": "hufai.ai.agent_hooks.clear_doc_event_agents_cache",
+        "on_trash": "hufai.ai.agent_hooks.clear_doc_event_agents_cache",
+    },
+}
 
 # Scheduled Tasks
 # ---------------
+scheduler_events = {
+    "all": [
+        "hufai.ai.agent_scheduler.run_scheduled_agents"
+    ]
+}
 
 # scheduler_events = {
 # 	"all": [

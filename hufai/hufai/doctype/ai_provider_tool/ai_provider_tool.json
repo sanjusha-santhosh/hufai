@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-24 14:47:33.596237",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tool_name",
+  "tool_key",
+  "provider",
+  "description",
+  "column_break_hvow",
+  "enabled",
+  "tool_type",
+  "expose_to_agents",
+  "schema"
+ ],
+ "fields": [
+  {
+   "fieldname": "tool_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tool Name"
+  },
+  {
+   "fieldname": "tool_key",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tool Key",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "tool_type",
+   "fieldtype": "Select",
+   "label": "Tool Type",
+   "options": "sync\nasync"
+  },
+  {
+   "default": "0",
+   "fieldname": "expose_to_agents",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Expose to Agents"
+  },
+  {
+   "fieldname": "schema",
+   "fieldtype": "Text",
+   "label": "Schema"
+  },
+  {
+   "fieldname": "column_break_hvow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "label": "Provider",
+   "options": "AI Provider",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-24 15:39:59.669672",
+ "modified_by": "Administrator",
+ "module": "HufAI",
+ "name": "AI Provider Tool",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
