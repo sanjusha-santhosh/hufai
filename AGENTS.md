@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This file provides context and instructions for AI coding agents to effectively work on the HufAI Frappe application.
+This file provides context and instructions for AI coding agents to effectively work on the HUF Frappe application.
 
 ## Project Overview
 HufAI is a Frappe application for creating and managing conversational AI agents. It allows developers to define agents, equip them with tools to interact with the Frappe framework (e.g., CRUD operations on DocTypes), and manage conversation histories.
